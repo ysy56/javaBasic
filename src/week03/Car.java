@@ -38,7 +38,8 @@ public class Car {
     // gasPedal
     // input : kmh
     // output : speed
-    double gasPedal(double kmh) {
+    double gasPedal(double kmh, char type) {
+        changeGear(type);
         speed = kmh;
         return speed;
     }
@@ -72,5 +73,12 @@ public class Car {
     // output : X
     void horn() {
         System.out.println("빵빵!");
+    }
+
+    // 자동차의 속도 ..가변길이 메서드
+    void carSpeeds(double ... speeds) {
+        for (double speed : speeds) {
+            System.out.println("speed: " + speed);
+        }
     }
 }
